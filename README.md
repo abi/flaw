@@ -13,3 +13,5 @@ Resources
 ---------
 
 http://www.haskell.org/haskellwiki/OpenGLTutorial2
+
+http://stackoverflow.com/questions/952841/exemplary-haskell-game-code
