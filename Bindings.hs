@@ -8,21 +8,12 @@ import Display
 reshape s@(Size w h) = do 
   viewport $= (Position 0 0, s)
  
---keyboardAct a p (Char ' ') Down = do
---  a' <- get a
---  a $= -a'
---keyboardAct a p (Char '+') Down = do
---  a' <- get a
---  a $= 2*a'
---keyboardAct a p (Char '-') Down = do
---  a' <- get a
---  a $= a'/2
 keyboardAct a (SpecialKey KeyLeft) Down = do
   a' <- get a
-  a $= a' - 2
+  a $= a' - 6
 keyboardAct a (SpecialKey KeyRight) Down = do
   a' <- get a
-  a $= a' + 2
+  a $= a' + 6
 --keyboardAct a p(SpecialKey KeyUp) Down = do
 --  (x,y) <- get p
 --  p $= (x,y+0.1)
