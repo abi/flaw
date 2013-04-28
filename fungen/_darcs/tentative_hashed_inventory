@@ -1,0 +1,129 @@
+pristine:2e01add2b7009d35b299c8cbb05af1cd045a70441a0296387b08a12daa386c80
+Starting with inventory:
+0000005530-4467f45cf9a0b2deca15804e13c89a19c5f2507d22f0eb0af0eff177fddfd40e
+[TAG 0.3
+Simon Michael <simon@joyful.com>**20110213195804
+ Ignore-this: 6143dd01407ca10cfeef7f2eb7347df2
+] 
+hash: 0000003509-f317fe365281d5681a49e8c2db91aa34d211378fcdf9243517951554715b7b5d
+[docs: fix tutorial links
+Simon Michael <simon@joyful.com>**20110213212358
+ Ignore-this: 9deae0d86e2a29cc782d94cbe9f8838e
+] 
+hash: 0000000753-cb79e4f73cadadb4b8d21b4c222cf31638d03daa656197f5c3e4bc92dd7d93ff
+[docs: fix title capitalisation
+Simon Michael <simon@joyful.com>**20110213212434
+ Ignore-this: 77fc48e109fc62088baa9f73cc4d3276
+] 
+hash: 0000000220-3e8e0fe2a6f06044cb7129ff19d26c62e16304aec813e1bdf5c44c24394ec611
+[docs: more useful links, release notes
+Simon Michael <simon@joyful.com>**20110213223141
+ Ignore-this: 8268ba1adc3bbf2ae9a39ad73499bfa2
+] 
+hash: 0000006779-a218c5b556a54cc0e734b5d04d28519053bee78bfb49be7e8956f83d75efe15a
+[docs: link to release announcement
+Simon Michael <simon@joyful.com>**20110417180440
+ Ignore-this: 2fcbb778eb6066bc6c24fddcd6f0dcdd
+] 
+hash: 0000000365-e8b82074b8fea22a2950aec36f27aa284dbe255099820a7ba90d6e9523eda444
+[HCAR entry
+Simon Michael <simon@joyful.com>**20111101053948
+ Ignore-this: 9b40edf5bf03782e0360fd57ad470ec8
+] 
+hash: 0000001181-02ba9eda63607fa12c423dca7c6883bd7e7e8f661fd206dee28b817f0a9d7aea
+[docs: some youtube link
+Simon Michael <simon@joyful.com>**20120226170953
+ Ignore-this: 65cac9a3a55d160e6bbeb2d306b9bb80
+] 
+hash: 0000000209-0862aa5ebed81f611131109fdf8088938103da696bd933622d21497be82f7eb0
+[a hakyll-based website, build script updates
+Simon Michael <simon@joyful.com>**20120229204218
+ Ignore-this: ad365fad42fef81958fc97de83b106e4
+] 
+hash: 0000022651-4abbc829efef8ca5936979f357acabb647cd07cc91d20391e3923eb58d30b0e7
+[update for GHC 7.4, bump version
+Simon Michael <simon@joyful.com>**20120229204239
+ Ignore-this: 32631c80975c9e9c4e4a59f4d7fd5d17
+] 
+hash: 0000001790-978162334ec80fbe743ddd55e258bf56aeffc011066d650f56221bd4f7e96e28
+[fungentest updates
+Simon Michael <simon@joyful.com>**20120301185559
+ Ignore-this: 164ea0004992c2fe8287e30b7487dae9
+] 
+hash: 0000000627-f8f0f59720cef77e8aaad831579f0a1d2583964bd20643f14b8671f7a0c5099d
+[simplify site.hs
+Simon Michael <simon@joyful.com>**20120301185611
+ Ignore-this: 8b1f2f6333a2ddb515b5fa8ca3f260ed
+] 
+hash: 0000000779-7b2844e4bc915b47d3b2b883eaeae3c0c069300b79e6346ddade67ae7f25babc
+[fix tag rule
+Simon Michael <simon@joyful.com>**20120301185621
+ Ignore-this: f2dab953ef22ad80392747419138a897
+] 
+hash: 0000000448-0b8a20704de89c2a9c992404e91383fe40c16f5621069c5fc4a45a610115fba0
+[site updates
+Simon Michael <simon@joyful.com>**20120301185639
+ Ignore-this: c8a1ded1c7f02308d6365b5b9615a79
+] 
+hash: 0000006255-a48f69d9d5c65b36dd720e934f257a4897258d13a3b09569e1f180b530e00c35
+[clean up site.hs
+Simon Michael <simon@joyful.com>**20120302143139
+ Ignore-this: 7880d2a07ef17c031dcfa67279e2c53a
+] 
+hash: 0000000792-4f080f3da9c1739f667784b5ce7a36599c62e6ca28428cd7ce1b7cdab4aa8000
+[provide modifier state and mouse position to input handlers; some haddocks
+Simon Michael <simon@joyful.com>**20120302161938
+ Ignore-this: bddc883c0de92997ec160ca925776a0
+ (inspired by Pradeep Kumar)
+] 
+hash: 0000004566-1f9eac5b78c25212930cf428d00637c7f06a5048770ae9ef6b1a72b7c8de7eca
+[demonstrate the new input handling in fungentest
+Simon Michael <simon@joyful.com>**20120302161955
+ Ignore-this: df72a3edf450373faea0c70f9188b76f
+] 
+hash: 0000003962-b7e5e8635d486ac99ab05a1e1f705b5e9231dd7fba707b4140da5708be05b2b1
+[provide more help for make auto
+Simon Michael <simon@joyful.com>**20120302162012
+ Ignore-this: 823efabcbdcd70532036b7afa5ada63e
+] 
+hash: 0000000576-3c507c16f01d06af6efba60213057aefa41e7dbf0437b594e3fe113f790a16d9
+[don't warn when building site
+Simon Michael <simon@joyful.com>**20120302162127
+ Ignore-this: 9ab7f46ef72127ceb97dc014292b5d77
+] 
+hash: 0000000195-35f667617d7551136b3fd23cdbe6b1497d067438c9679508308f0edec08f8cde
+[expose more things in haddock
+Simon Michael <simon@joyful.com>**20120302163315
+ Ignore-this: 8b5d64466a140994456d5913c0df78ba
+] 
+hash: 0000000583-ae5a8d047462f9e91a352fcb8cba25aa26ee8343329fcd1b84773d65e443f018
+[tutorial tweak
+Simon Michael <simon@joyful.com>**20120302163849
+ Ignore-this: 61c9b39250019f6e097e31c1a7fa6a06
+] 
+hash: 0000000535-bc6f1a077687b721b111fd3121f622046b1247d226fd24979c14be7af3202217
+[re-enable tutorial
+Simon Michael <simon@joyful.com>**20120302163918
+ Ignore-this: 9cc78a15fa2516f8fd3ea34cb0bdde9
+] 
+hash: 0000000255-cfa8a0847a03efe0c9ec4f813692bb221f936aa2459a1761c31089a6e3b1e567
+[enable api docs
+Simon Michael <simon@joyful.com>**20120302163929
+ Ignore-this: ffe928c3abad5a5671d35cfaff7fccf2
+] 
+hash: 0000000359-3090fb59b5101edbc693395ba7dced31db751a7465b87ea1c829807c08fed7d1
+[add Andre's site snapshot from 2011/5/3
+Simon Michael <simon@joyful.com>**20120302164215
+ Ignore-this: 71c2f482dd0a92241599a182ff20d360
+] 
+hash: 0002257754-23894ccb0c9e406300b9e0b8beafab6585fc269fc4904b25463cf329da9429fe
+[publish Andre's old site content
+Simon Michael <simon@joyful.com>**20120302165252
+ Ignore-this: b9282a77db311afc735693a2fb8673ab
+] 
+hash: 0000000510-74c9e7def4a54f4c20da3884a6cc8e3f9aa77418339a7d63a1d57d4801c81eec
+[site updates
+Simon Michael <simon@joyful.com>**20120302171545
+ Ignore-this: 25849df55ecd49516a88af5ea7407a71
+] 
+hash: 0000002366-50f85ee8fd8d6b27af242e2a25e618bc6fdfb20bba43b7a782d5cba8a7bb0cdf
