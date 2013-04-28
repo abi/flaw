@@ -5,6 +5,8 @@ cabal-dev
 *.chi
 *.chs.h
 .virthualenv
+*.swp
+*.sw0
 
 # Binaries
 Main
