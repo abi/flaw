@@ -7,11 +7,14 @@ import Bindings
 import Data.List
 import System.Random
 
+gridSize = 6
+
 --- Always keep the z coord 1 since this is a 2D game
-genAsteriods :: Int -> StdGen -> StdGen -> [(GLfloat,GLfloat,GLfloat)]
-genAsteriods k seed1 seed2 = zip3 xs ys (repeat 1)
-                              where xs = (randomlist k (-1, 10) seed1)
-                                    ys = (randomlist k (-1, 1) seed2)
+genAsteriods :: Int -> StdGen -> StdGen -> [(GLfloat,GLfloat,GLfloat, GLfloat)]
+genAsteriods k seed1 seed2 = zip4 xs ys (repeat 1) sizes
+                              where xs = (randomlist k (-gridSize/2, gridSize/2) seed1)
+                                    ys = (randomlist k (-gridSize/2, gridSize/2) seed2)
+                                    sizes = (randomlist k (0, 0.3) seed1)
 
 randomlist n r = take n . unfoldr (Just . randomR r)
 
