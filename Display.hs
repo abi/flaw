@@ -5,14 +5,18 @@ import Graphics.UI.GLUT
 
 import Cube
  
-display xTranslate shipRotate asteriods = do 
+
+--idleCallback $= Just (idle ax ay)
+
+display vx vy shipRotate asteriods = do 
   clear [ColorBuffer]
-  xT <- get xTranslate
+  vx_ <- get vx
+  vy_ <- get vy
   a  <- get shipRotate
   asters <- get asteriods
   mapM_ (\(x,y,z) -> preservingMatrix $ do
     color $ Color3 x y z
-    translate $ Vector3 (x-xT) y z
+    translate $ Vector3 (x-vx_) (y-vy_) z
     cube (0.1::GLfloat)
     ) asters
   preservingMatrix $ do
@@ -20,7 +24,11 @@ display xTranslate shipRotate asteriods = do
     cube (0.2::GLfloat)
   flush
 
-idle xTranslate = do
-  xT <- get xTranslate
-  xTranslate $=! (xT + 0.0005)
+idle vx vy ax ay = do
+  vx' <- get vx
+  vy' <- get vy
+  ax' <- get ax
+  ay' <- get ay
+  vx $=! (vx' + ax')
+  vy $=! (vy' + ay')
   postRedisplay Nothing
