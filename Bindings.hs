@@ -8,4 +8,28 @@ import Display
 reshape s@(Size w h) = do 
   viewport $= (Position 0 0, s)
  
-keyboardMouse key state modifiers position = return ()
+--keyboardAct a p (Char ' ') Down = do
+--  a' <- get a
+--  a $= -a'
+--keyboardAct a p (Char '+') Down = do
+--  a' <- get a
+--  a $= 2*a'
+--keyboardAct a p (Char '-') Down = do
+--  a' <- get a
+--  a $= a'/2
+keyboardAct a (SpecialKey KeyLeft) Down = do
+  a' <- get a
+  a $= a' - 2
+keyboardAct a (SpecialKey KeyRight) Down = do
+  a' <- get a
+  a $= a' + 2
+--keyboardAct a p(SpecialKey KeyUp) Down = do
+--  (x,y) <- get p
+--  p $= (x,y+0.1)
+--keyboardAct a p (SpecialKey KeyDown) Down = do
+--  (x,y) <- get p
+--  p $= (x,y-0.1)
+keyboardAct _ _ _ = return ()
+ 
+keyboardMouse angle key state modifiers position = do
+  keyboardAct angle key state 
