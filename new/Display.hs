@@ -12,23 +12,30 @@ initGraphics = do
   getArgsAndInitialize
   createWindow "Flaw"
   displayCallback $= return ()
+  -- TODO: make antialiasing actually work
+  lineSmooth $= Enabled
+  blend $= Enabled
+  blendFunc $= (SrcAlpha, OneMinusSrcAlpha)
+  hint LineSmooth $= DontCare
 
 displayWorld w = do
   let s = w^.ship
   clear [ColorBuffer]
   loadIdentity
   centerView (realToFrac $ s^.pos._x) (realToFrac $ s^.pos._y) 50
+  forM (w^.asteroids) $ \a-> preservingMatrix $ do
+      color $ a^.clr
+      -- TODO: center astroid
+      translate $ a^.pos.to vector
+      drawCircle $ a^.size.to realToFrac
   preservingMatrix $ do
-    color $ Color3 1.0 0.0 (1.0 :: GLfloat)
+    color $ Color3 0.2 0.0 (1.0 :: GLfloat)
     translate $ Vector3 (realToFrac $ s^.pos^._x) (realToFrac $ s^.pos^._y) (1 :: GLfloat)
     rotate (realToFrac $ s^.angle) $ Vector3 0 0 (1 :: GLfloat)
     translate $ Vector3 (-0.5) (-1) (0 :: GLfloat)
     renderPrimitive Quads $ vertify3 [(0,0,0), (0,2,0), (1,2,0), (1,0,0)]
-  forM (w^.asteroids) $ \a-> do
-    color $ a^.clr
-    -- TODO: center astroid
-    translate $ a^.pos.to vector
-    drawCircle $ a^.size.to realToFrac
+    color $ Color3 1 0 (0 :: GLfloat)
+    renderPrimitive Triangles $ vertify3 [(0,2,0), (0.5,3,0), (1,2,0)]
   flush
 
 

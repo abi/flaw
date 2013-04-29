@@ -6,21 +6,26 @@ import Display
 import GameController
 import Control.Lens
 import Control.Monad.State
+import Graphics.Rendering.OpenGL(Color3(..))
 
 import Graphics.UI.GLUT (mainLoop)
 main :: IO ()
 main = do
   initGraphics
+  world <- initWorld
   play
     40
-    initWorld
+    world
     displayWorld
     inputUpdate
     worldUpdate
   mainLoop
 
 
-initWorld = World (makeShip (0,0)) []
+initWorld :: IO World
+initWorld = do 
+  ast <- replicateM 30 (randomAsteroid (-100,100) (-1,1) (1,5))
+  return $ World (makeShip (0,0)) ast
 
 inputUpdate :: KeySet -> World -> World
 inputUpdate keys = execState $ do
@@ -29,4 +34,7 @@ inputUpdate keys = execState $ do
   when (keys^.contains keyRight) $ ship %= rotateShip (-7)
 
 worldUpdate :: World -> World
-worldUpdate = ship %~ moveShip
+worldUpdate = execState $ do
+  ship %= movePhys
+  asteroids.mapped %= movePhys
+  -- col <- collisionDetected
