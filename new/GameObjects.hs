@@ -2,8 +2,10 @@
 module GameObjects where
 
 import Control.Lens
+import Control.Monad
 import Data.NumInstances
-import Graphics.Rendering.OpenGL(Color3, GLfloat)
+import System.Random
+import Graphics.Rendering.OpenGL(Color3(..), GLfloat)
 
 type Vector = (Double, Double)
 data Phys = Phys { _pos :: Vector
@@ -11,6 +13,9 @@ data Phys = Phys { _pos :: Vector
                  }
   deriving Show
 makeClassy ''Phys
+
+movePhys :: HasPhys t => t -> t
+movePhys o = o & pos +~ (o^.vel)
 
 data Ship = Ship { _shipPhys :: Phys
                  , _angle :: Double
@@ -26,9 +31,6 @@ _y = _2
 
 makeShip :: Vector -> Ship
 makeShip p = Ship (Phys p (0,0)) 0
-
-moveShip :: Ship -> Ship
-moveShip s = s & pos +~ (s^.vel)
 
 thrustShip :: Double -> Ship -> Ship
 thrustShip mag s = s & vel +~ ((-mag) * sin (s^.angle.to radians),
@@ -54,6 +56,12 @@ instance HasPhys Asteroid where
 makeAsteroid :: Vector -> Vector -> Double -> Color3 GLfloat -> Asteroid
 makeAsteroid p v s c = Asteroid (Phys p v) s c
 
+randomAsteroid :: (Double, Double) -> (Double, Double) -> (Double, Double) -> IO Asteroid
+randomAsteroid rp rv rs = liftM4 makeAsteroid
+                                 (liftM2 (,) (randomRIO rp) (randomRIO rp))
+                                 (liftM2 (,) (randomRIO rv) (randomRIO rv))
+                                 (randomRIO rs)
+                                 (return $ Color3 0 1 0)
 
 data World = World { _ship :: Ship
                    , _asteroids :: [Asteroid]
