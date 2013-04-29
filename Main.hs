@@ -20,17 +20,20 @@ randomlist n r = take n . unfoldr (Just . randomR r)
 
 main = do
   (progname,_) <- getArgsAndInitialize
-  createWindow "Hello World"
+  createWindow "flaw"
   reshapeCallback $= Just reshape
   seed1 <- newStdGen
   seed2 <- newStdGen
+  dx <- newIORef 0.0
+  dy <- newIORef 0.0
   vx <- newIORef 0.0
   vy <- newIORef 0.0
   ax <- newIORef 0.0
   ay <- newIORef 0.0
+  acc <- newIORef True
   shipRotate <- newIORef 90.0
   asteriods <- newIORef $ genAsteriods 50 seed1 seed2
-  keyboardMouseCallback $= Just (keyboardMouse shipRotate ax ay)
-  displayCallback $= (display vx vy shipRotate asteriods)
-  idleCallback $= Just (idle vx vy ax ay)
+  keyboardMouseCallback $= Just (keyboardMouse shipRotate acc)
+  displayCallback $= (display dx dy shipRotate asteriods)
+  idleCallback $= Just (idle acc shipRotate dx dy vx vy ax ay)
   mainLoop
