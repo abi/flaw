@@ -24,7 +24,7 @@ main = do
 
 initWorld :: IO World
 initWorld = do 
-  ast <- replicateM 30 (randomAsteroid (-100,100) (-1,1) (1,5))
+  ast <- replicateM 100 (randomAsteroid (-100,100) (-1,1) (1,5))
   return $ World (makeShip (0,0)) ast
 
 inputUpdate :: KeySet -> World -> World
